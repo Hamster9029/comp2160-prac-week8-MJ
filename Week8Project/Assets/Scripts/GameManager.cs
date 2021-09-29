@@ -4,15 +4,48 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Singleton
+    static private GameManager instance;
+    static public GameManager Instance
     {
-        
+        get
+        {
+            if (instance == null)
+            {
+                Debug.LogError("There is no GameManager instance in the scene.");
+            }
+            return instance;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private int score = 0;
+    public int Score
     {
-        
+        get
+        {
+            return score;
+        }
     }
+
+    public int scorePerCoin;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            // destroy duplicates
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+
+    // add scorePerCoin to score when called
+    public void ScoreCoin()
+    {
+        score += scorePerCoin;
+    }
+
 }

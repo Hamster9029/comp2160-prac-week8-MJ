@@ -21,12 +21,4 @@ public class Player : MonoBehaviour
         Vector3 velocity = new Vector3(vx, vy, 0) * playerSpeed;
         transform.Translate(velocity * Time.deltaTime);
     }
-
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.tag == "Coin")
-        {
-            Destroy(col.gameObject);
-        }
-    }
 }
