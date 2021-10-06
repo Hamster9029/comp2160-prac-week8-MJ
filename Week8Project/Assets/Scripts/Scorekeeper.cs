@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Scorekeeper : MonoBehaviour
 {
     // Singleton
-    static private GameManager instance;
-    static public GameManager Instance
+    static private Scorekeeper instance;
+    static public Scorekeeper Instance
     {
         get
         {
@@ -18,12 +18,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int score = 0;
-    public int Score
+    private int scoreP1 = 0;
+    public int ScoreP1
     {
         get
         {
-            return score;
+            return scoreP1;
+        }
+    }
+
+    private int scoreP2 = 0;
+    public int ScoreP2
+    {
+        get
+        {
+            return scoreP2;
         }
     }
 
@@ -43,9 +52,14 @@ public class GameManager : MonoBehaviour
     }
 
     // add scorePerCoin to score when called
-    public void ScoreCoin()
+    public void ScoreCoinP1()
     {
-        score += scorePerCoin;
+        scoreP1 += scorePerCoin;
+    }
+
+    public void ScoreCoinP2()
+    {
+        scoreP2 += scorePerCoin;
     }
 
 }

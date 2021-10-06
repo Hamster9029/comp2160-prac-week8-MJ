@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public Text score;
+    public Text scoreP1;
+    public Text scoreP2;
     void Awake()
     {
         if (instance != null)
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = string.Format("Score: " + GameManager.Instance.Score.ToString());
+        scoreP1.text = string.Format("Player 1 Score: " + Scorekeeper.Instance.ScoreP1.ToString());
+        scoreP2.text = string.Format("Player 2 Score: " + Scorekeeper.Instance.ScoreP2.ToString());
     }
 }

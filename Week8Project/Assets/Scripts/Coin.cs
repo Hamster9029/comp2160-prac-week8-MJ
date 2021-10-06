@@ -10,7 +10,13 @@ public class Coin : MonoBehaviour
         if (collider.tag == "Player")
         {
             Destroy(gameObject);
-            GameManager.Instance.ScoreCoin();
+            Scorekeeper.Instance.ScoreCoinP1();
+        }
+
+        if (collider.tag == "Player2")
+        {
+            Destroy(gameObject);
+            Scorekeeper.Instance.ScoreCoinP2();
         }
     }
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+  - Player2
   layers:
   - Default
   - TransparentFX
